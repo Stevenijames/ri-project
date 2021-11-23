@@ -1,30 +1,38 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div :class="$style.app">
+    <Greeting />
+    <img src="./assets/img/bg_flag.png" alt="USA Flag" class="banner-flag" />
+    <Navblock />
   </div>
   <router-view />
 </template>
 
-<style>
-#app {
+<script>
+import Greeting from "./components/Greeting.vue";
+import Navblock from "./components/Navblock.vue";
+
+export default {
+  name: "App",
+  components: {
+    Greeting,
+    Navblock,
+  },
+};
+</script>
+
+<style module>
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+img {
+  width: 100%;
+  height: 15vh;
+  margin-top: -2px;
+  margin-bottom: -2px;
 }
 </style>
